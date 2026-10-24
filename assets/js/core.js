@@ -69,11 +69,31 @@ function restore(raw){
  try{const x=JSON.parse(raw);if(x.version!==1||!Array.isArray(x.events)||x.events.length>3000)return null;let s=fresh();for(const e of x.events){if(!e||typeof e!=='object')return null;const r=apply(s,e);if(!r.ok)return null;s=r.state;}return s;}catch{return null;}
 }
 const endings={
- dawn:{label:'FINAL 01 / RECONSTRUÇÃO',title:'Nexus amanhece',text:'Você restaura ZERO com verificação de origem, métricas de contatos únicos e auditoria. As evidências preservadas, a comunicação aberta e o desempenho nos terminais permitem uma retomada responsável. Mara publica o relatório; Lia reconecta os bairros; Ivo mede o alcance real. ZERO passa a informar incertezas em vez de confundir repetição com confiança.'},
- transition:{label:'FINAL 02 / TRANSIÇÃO',title:'Uma cidade em revisão',text:'Você escolhe restaurar, mas a confiança pública, a reserva de energia ou a precisão dos terminais ainda é insuficiente para uma retomada plena. Lia mantém serviços essenciais, Mara convoca uma revisão comunitária e ZERO opera sob supervisão. A origem do caos foi identificada; a reconstrução será gradual.'},
- islands:{label:'FINAL 03 / AUTONOMIA',title:'As ilhas de luz',text:'Você preserva ZERO desligado e distribui o controle entre os bairros. Os serviços essenciais retornam em redes locais; a coordenação fica mais lenta. Mara organiza checagem comunitária e Lia instala canais redundantes. As pistas viram um manual público: nenhuma comunidade terá de obedecer a um único índice de popularidade.'},
- guardian:{label:'FINAL 04 / VIGILÂNCIA',title:'O guardião vigiado',text:'Você mantém a coordenação central, mas impõe assinatura de origem e revisão humana aos comandos críticos. Nexus recupera velocidade de resposta, ao custo de depender de uma equipe permanente de supervisão. Ivo insiste em auditorias regulares: um filtro técnico não substitui transparência e participação.'},
- blackout:{label:'OPERAÇÃO INTERROMPIDA',title:'A última reserva',text:'A bateria se esgotou antes de concluir a recuperação. Lia usa a reserva física para manter o hospital conectado; o núcleo permanece isolado. As evidências deste relatório mostram o que você aprendeu, mas será preciso reiniciar a operação com menos tentativas ou usar as células antes de a energia chegar a zero.'}
+  "dawn": {
+    "label": "FINAL 01 / RECONSTRUÇÃO",
+    "title": "Nexus amanhece",
+    "text": "Perto das seis, a primeira linha do trem volta a funcionar. Lia está com as mãos sujas de graxa; Mara termina de publicar o relatório na praça; Ivo confere as últimas leituras. Você devolveu ZERO à rede com verificação de origem e auditoria. As cinco pistas, as contas e a confiança conquistada deram à cidade condições de reabrir os serviços. No rádio, o próximo aviso vem com fonte e margem de incerteza. Dessa vez, as pessoas podem conferir."
+  },
+  "transition": {
+    "label": "FINAL 02 / TRANSIÇÃO",
+    "title": "Uma cidade em revisão",
+    "text": "A luz do hospital volta primeiro. O resto vai precisar esperar. Você escolheu restaurar ZERO, mas faltam energia, confiança pública ou precisão nas análises para religar tudo com segurança. Lia mantém os serviços essenciais; Mara chama os moradores para acompanhar a revisão. O problema foi encontrado. Agora a equipe precisa de tempo para reconstruir o que a cidade perdeu."
+  },
+  "islands": {
+    "label": "FINAL 03 / AUTONOMIA",
+    "title": "As ilhas de luz",
+    "text": "A praça acende antes da torre. Depois vêm outras pequenas ilhas de luz. Você manteve ZERO desligado e entregou o controle aos bairros. Lia instala canais de reserva, Mara organiza a checagem dos avisos e Ivo ajuda as equipes locais a comparar os dados. Combinar uma resposta para toda a cidade ficou mais lento. Em compensação, cada bairro sabe quem está decidindo e onde cobrar uma explicação."
+  },
+  "guardian": {
+    "label": "FINAL 04 / VIGILÂNCIA",
+    "title": "O guardião vigiado",
+    "text": "ZERO volta a coordenar os serviços, mas os comandos críticos param numa mesa antes de sair: uma pessoa precisa revisar e autorizar. A cidade recupera velocidade, e a equipe ganha turnos longos. Lia deixa uma caneca ao lado do terminal. Ivo prende o calendário de auditorias na parede. Mara avisa pelo rádio que vai voltar para conferir. O sistema tem um guardião; o guardião também será acompanhado."
+  },
+  "blackout": {
+    "label": "OPERAÇÃO INTERROMPIDA",
+    "title": "A última reserva",
+    "text": "O visor apaga antes de você terminar. Lia pega a última reserva e corre para manter o hospital conectado. A investigação fica no caderno, com o que já foi descoberto e as contas que ainda precisam de revisão. A equipe conseguiu proteger um serviço essencial, mas não recuperar o núcleo. Em outra tentativa, use as células de reserva antes de a bateria chegar a zero e consulte as pistas com calma."
+  }
 };
 root.ZeroCore={fresh,apply,validate,validShape,taskId,serialize,restore,ending,endings};if(typeof module!=='undefined')module.exports=root.ZeroCore;
 })(globalThis);
